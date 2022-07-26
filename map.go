@@ -4,6 +4,7 @@ var (
 	toneMap = map[string][2]float64{
 		"20":  {910, 1344},   // Ashford #20
 		"71":  {472.5, 1530}, // Eastford #71
+		"34":  {1082, 910},   // Bolton #34
 		"26":  {2361, 2688},  // Bozrah #26
 		"92":  {2465, 1530},  // Brooklyn - East Brooklyn #92
 		"90":  {2465, 871},   // Brooklyn - Mortlake #90
@@ -11,6 +12,8 @@ var (
 		"93":  {2465, 950},   // Canterbury #93
 		"09":  {2807, 910},   // Chaplin #09
 		"05":  {1344, 992},   // Columbia #05
+		"43":  {1130, 1082},  // Ellington #43
+		"25":  {2807, 1985},  // Franklin #25
 		"55":  {2361, 910},   // Griswold #55
 		"56":  {2361, 765},   // Griswold - Jewett City #56
 		"12":  {2807, 950},   // Hampton #12
@@ -26,6 +29,12 @@ var (
 		"06":  {2049, 1344},  // Lebanon #06
 		"54":  {2361, 643},   // Lisbon #54
 		"07":  {992, 2807},   // Mansfield #07
+		"M":   {1180, 335.6}, // Mashantucket Pequot (Foxwoods)
+		"NS":  {1530 - 910},  // North Stonington
+		"59":  {1465, 950},   // Norwich - East Great Plain
+		"52":  {1465, 992},   // Norwich - Laurel Hill #52
+		"35":  {1465, 672},   // Norwich - Taftville #35
+		"36":  {1465, 732},   // Norwich - Yantic #36
 		"68":  {1180, 435.3}, // Oneco #68
 		"95":  {2465, 992},   // Plainfield #95
 		"96":  {2465, 1232},  // Plainfield - Atwood Hose #96
@@ -33,6 +42,7 @@ var (
 		"94":  {2465, 435.3}, // Plainfield - Moosup #94
 		"594": {2465, 701},   // Plainfield - Moosup Ambulance #94
 		"70":  {2465, 731},   // Pomfret #70
+		"57":  {2361, 1232},  // Preston #57
 		"78":  {472.5, 990},  // Putnam #78
 		"578": {472.5, 871},  // Putnam - Putnam EMS #578
 		"79":  {1598, 1669},  // Putnam - East Putnam #79
@@ -51,6 +61,9 @@ var (
 		"72":  {2575, 1344},  // Union #72
 		"41":  {992, 910},    // Vernon #41
 		"53":  {2361, 992},   // Voluntown #53
+		"501": {871, 1130},   // Windham - Windham Hospital Medics
+		"02":  {950, 1130},   // Windham - North Windham #02
+		"03":  {2932, 1130},  // Windham - Windham Center #03
 		"76":  {474.8, 799},  // Woodstock #76
 		"77":  {474.8, 1820}, // Woodstock - Bungay #77
 		"576": {474.8, 950},  // Woodstock - Woodstock Ambulance #76
