@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"time"
@@ -10,23 +11,36 @@ import (
 	"github.com/jbuchbinder/beep/speaker"
 )
 
+var (
+	list = flag.Bool("list", false, "List all supported stations")
+)
+
 func usage() {
-	fmt.Printf("usage: %s station [...station]\n", os.Args[0])
+	fmt.Printf("usage: %s [-list] station [...station]\n", os.Args[0])
 	fmt.Println("station is the numeric station identifier")
 }
 
 func main() {
-	if len(os.Args) < 2 {
+	flag.Parse()
+	args := flag.Args()
+
+	if *list {
+		listStations()
+		return
+	}
+
+	if len(args) < 2 {
 		usage()
 		return
 	}
 
-	for _, a := range os.Args[1:] {
+	for _, a := range args[1:] {
 		if len(a) == 1 {
 			a = "0" + a
 		}
 		if t, ok := toneMap[a]; ok {
-			err := playTones(t[0], t[1])
+			fmt.Printf(" -> %s\n", t.name)
+			err := playTones(t.tone1, t.tone2)
 			if err != nil {
 				panic(err)
 			}
@@ -71,5 +85,12 @@ func playTones(f1, f2 float64) error {
 func print(s string) func() {
 	return func() {
 		fmt.Println(s)
+	}
+}
+
+func listStations() {
+	fmt.Printf("Supported station IDs and tones:\n\n")
+	for k, v := range toneMap {
+		fmt.Printf("%3s : %35s [%0.1f,%0.1f]\n", k, v.name, v.tone1, v.tone2)
 	}
 }
