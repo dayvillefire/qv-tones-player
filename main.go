@@ -29,12 +29,12 @@ func main() {
 		return
 	}
 
-	if len(args) < 2 {
+	if len(args) < 1 {
 		usage()
 		return
 	}
 
-	for _, a := range args[1:] {
+	for _, a := range args {
 		if len(a) == 1 {
 			a = "0" + a
 		}
