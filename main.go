@@ -44,7 +44,7 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
-			time.Sleep(200 * time.Millisecond)
+			time.Sleep(250 * time.Millisecond)
 		}
 	}
 }
